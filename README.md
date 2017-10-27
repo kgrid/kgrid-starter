@@ -28,7 +28,7 @@ Once the system has all prerequisites, the following KGRID Components are needed
 
 - [Knowledge Grid Starter Sample Knowledge Objects](KO Pack links) in the folder of `\activator\shelf`
 
-- [Knowledge Grid Starter Client App](https://github.com/kgrid/cancer-advisor/releases) in the folder of `\cancer-advisor`
+- [Knowledge Grid Starter Client App](https://github.com/kgrid/cancer-advisor/releases) in the folder of `\cancer-advisor-0.5`
 
 These components are already installed in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above if needed and saved in the designated folders.
 
@@ -36,27 +36,34 @@ These components are already installed in Knowledge Grid Starter Kit, or be down
 A typical file structure for the Knowledge Grid Starter Kit will look like this:
 
 ```
-├── fcrepo4-vagrant
+├── downloads
+├── fcrepo4-vagrant-4.5.1
 ├── library
-│   ├── init_script.sh
 │   └── kgrid-library-0.2.4-SNAPSHOT.war
 ├── activator
 │   ├── adapters
-│   │   ├── python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar
+│   │   └── python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar
 │   ├── shelf
 │   │   ├── 99999-fk4571p57h
 │   │   ├── 99999-fk4n87hh26
-│   │   ├ ...
-│   │   ├ ...
+│   │   ├── ...
+│   │   ├── ...
 │   │   └── 99999-fk4805c32z
-│   ├── init_script.sh
 │   └── activator-0.5.8-SNAPSHOT.war
-├── cancer-advisor
+├── install-scripts
+│   ├── download.sh
+│   ├── init.sh
+│   └── install.sh
+├── cancer-advisor-0.5
 │   ├── css
 │   ├── js
 │   ├── data
 │   └── index.html
-└── kgrid_script.sh
+├── readme.md
+├── readme.html
+├── restart.sh
+├── stop.sh
+└── start.sh
 ```
 
 Now, everything is ready.
@@ -84,9 +91,9 @@ The script will:
 
 - Provision the vagrant virtual machine (init only);
 
-- start Knowledge Grid Library service at localhost:8090;
+- start Knowledge Grid Library service at localhost:8081;
 
-- start knowledge Grid Activator at loalhost:8091;
+- start knowledge Grid Activator at loalhost:8082;
 
 - add the knowledge objects to the library (init only);
 

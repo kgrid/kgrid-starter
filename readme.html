@@ -5,10 +5,6 @@
 		<title>Knowledge Grid Starter Guide</title>
 		<style>
 			<style>
-  /* http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
-*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -211,33 +207,40 @@ width: 850px;
 </li>
 <li><p><a href="KO Pack links">Knowledge Grid Starter Sample Knowledge Objects</a> in the folder of <code>\activator\shelf</code></p>
 </li>
-<li><p><a href="https://github.com/kgrid/cancer-advisor/releases">Knowledge Grid Starter Client App</a> in the folder of <code>\cancer-advisor</code></p>
+<li><p><a href="https://github.com/kgrid/cancer-advisor/releases">Knowledge Grid Starter Client App</a> in the folder of <code>\cancer-advisor-0.5</code></p>
 </li>
 </ul>
 <p>These components are already installed in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above if needed and saved in the designated folders.</p>
 <h3 id="file-structure">File structure</h3>
 <p>A typical file structure for the Knowledge Grid Starter Kit will look like this:</p>
-<pre><code>├── fcrepo4-vagrant
+<pre><code>├── downloads
+├── fcrepo4-vagrant-4.5.1
 ├── library
-│   ├── init_script.sh
 │   └── kgrid-library-0.2.4-SNAPSHOT.war
 ├── activator
 │   ├── adapters
-│   │   ├── python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar
+│   │   └── python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar
 │   ├── shelf
 │   │   ├── 99999-fk4571p57h
 │   │   ├── 99999-fk4n87hh26
-│   │   ├ ...
-│   │   ├ ...
+│   │   ├── ...
+│   │   ├── ...
 │   │   └── 99999-fk4805c32z
-│   ├── init_script.sh
 │   └── activator-0.5.8-SNAPSHOT.war
-├── cancer-advisor
+├── install-scripts
+│   ├── download.sh
+│   ├── init.sh
+│   └── install.sh
+├── cancer-advisor-0.5
 │   ├── css
 │   ├── js
 │   ├── data
 │   └── index.html
-└── kgrid_script.sh
+├── readme.md
+├── readme.html
+├── restart.sh
+├── stop.sh
+└── start.sh
 </code></pre><p>Now, everything is ready.</p>
 <h3 id="section-3-griddy-up-and-run-">Section 3. Griddy Up and Run!</h3>
 <p>At the root of Knowledge Grid Starter Kit, run the script:</p>
@@ -256,9 +259,9 @@ width: 850px;
 </li>
 <li><p>Provision the vagrant virtual machine (init only);</p>
 </li>
-<li><p>start Knowledge Grid Library service at localhost:8090;</p>
+<li><p>start Knowledge Grid Library service at localhost:8081;</p>
 </li>
-<li><p>start knowledge Grid Activator at loalhost:8091;</p>
+<li><p>start knowledge Grid Activator at loalhost:8082;</p>
 </li>
 <li><p>add the knowledge objects to the library (init only);</p>
 </li>
