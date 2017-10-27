@@ -4,7 +4,7 @@
 # initialize the library with the objects from the shelf
 
 cd ..
-start.sh
+./start.sh
 
 curl -XPOST http://localhost:8081/login -Fusername=admin@kgrid.org -Fpassword=admin123 --cookie-jar boo
 curl -XPUT "localhost:8081/knowledgeObject/99999-fk4ff41k51" -d "./activator/shelf/99999-fk4jh3tk9s" -H "Content-Type: application/json" --cookie boo
@@ -15,6 +15,6 @@ curl -XPUT "localhost:8081/knowledgeObject/99999-fk4ff41k51" -d "./activator/she
 curl -XPUT "localhost:8081/knowledgeObject/99999-fk4ff41k51" -d "./activator/shelf/99999-fk4805c32z" -H "Content-Type: application/json" --cookie boo
 # ...
 
-stop.sh
+./stop.sh
 popd
 
