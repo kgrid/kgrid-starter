@@ -6,11 +6,11 @@ To set up and run Knowledge Grid from your local machine, the system should have
 
 - [Java SE Development Kit 8](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 
-- [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note get VirtualBox version 5.1 which is compatible with Vagrant. 
 
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 
-- [Node.js and npm](https://www.npmjs.com/get-npm)
+- [Node.js and npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version.
 
 If needed, these software can be found in the folder of 'Downloads' in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above.
 
