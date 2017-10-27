@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Knowledge Grid Starter Guide</title>
+		<style>
+			<style>
+  /* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+sup {
+vertical-align: super;
+font-size: smaller;
+}
+
+sub {
+vertical-align: sub;
+font-size: smaller;
+}
+
+/* Generic styles */
+body {
+background: #f5f5f5;
+color: #222;
+font-family: 'Sans Serif',serif;
+font-size: 18px;
+margin: 0;
+padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol,
+p,
+code, pre,
+hr {
+line-height: 1.5em;
+margin: 1.5em 0 0.5em 0;
+}
+
+*:first-child {
+margin-top: 0;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+font-weight: bold;
+}
+
+h1 {
+font-size: 3em;
+}
+
+h2 {
+font-size: 2.2em;
+}
+
+h3 {
+font-size: 1.6em;
+}
+
+h4 {
+font-size: 1.5em
+}
+
+h5 {
+font-size: 1.2em;
+}
+
+h6 {
+font-size: 1em;
+}
+
+/* Lists */
+ul, ol {
+padding-left: 2em;
+}
+
+ul {
+list-style-type: disc;
+}
+
+ol {
+list-style-type: decimal;
+}
+
+/* Code and pre */
+code, pre {
+font-family: "Bitstream Vera Sans Mono", "Courier", monospace;
+}
+code {
+padding: 2px 4px;
+font-size: 90%;
+color: #333333;
+background-color: #f9f2f4;
+border-radius: 4px;
+}
+pre {
+border-left: 5px solid #eee;
+margin-left: 2em;
+padding-left: 1em;
+}
+pre > code {
+background: transparent;
+border: none;
+padding: 0;
+}
+
+/* Links */
+a {
+color: #428bca;
+text-decoration: none;
+}
+
+a:hover, a:focus {
+color: #2a6496;
+text-decoration: underline;
+}
+
+/* Inlines */
+strong {
+font-weight: bold;
+}
+
+em {
+font-style: italic;
+}
+
+/* Container */
+.container {
+background: #FFF;
+padding: 30px 50px;
+margin: 0 auto;
+width: 850px;
+}
+
+</style>
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2 id="knowledge-grid-starter-guide">Knowledge Grid Starter Guide</h2>
+<h3 id="section-1-prepare-your-system">Section 1. Prepare your system</h3>
+<p>To set up and run Knowledge Grid from your local machine, the system should have the following required software:</p>
+<ul>
+<li><p><a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8</a></p>
+</li>
+<li><p><a href="https://www.virtualbox.org/wiki/Downloads">Oracle VirtualBox</a></p>
+</li>
+<li><p><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></p>
+</li>
+<li><p><a href="https://www.npmjs.com/get-npm">Node.js and npm</a></p>
+</li>
+</ul>
+<p>If needed, these software can be found in the folder of &#39;Downloads&#39; in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above.</p>
+<h3 id="section-2-download-kgrid-components-and-provision">Section 2. Download KGRID Components and Provision</h3>
+<p>Once the system has all prerequisites, the following KGRID Components are needed:</p>
+<ul>
+<li><p><a href="https://github.com/kgrid/fcrepo4-vagrant/releases">Knowledge Grid - customized Fedora 4 Vagrant Virtual Machine</a> in the folder of <code>\fcrepo4-vagrant</code></p>
+</li>
+<li><p><a href="https://github.com/kgrid/kgrid-library/releases">Knowledge Grid Library</a> in the folder of <code>\library</code></p>
+</li>
+<li><p><a href="https://github.com/kgrid/kgrid-activator/releases">Knowledge Grid Activator</a> in the folder of <code>\activator</code></p>
+</li>
+<li><p><a href="https://github.com/kgrid/python-adapter/releases">Knowledge Grid Python Adapter</a> in the folder of <code>\activator\adapters</code></p>
+</li>
+<li><p><a href="KO Pack links">Knowledge Grid Starter Sample Knowledge Objects</a> in the folder of <code>\activator\shelf</code></p>
+</li>
+<li><p><a href="https://github.com/kgrid/cancer-advisor/releases">Knowledge Grid Starter Client App</a> in the folder of <code>\cancer-advisor</code></p>
+</li>
+</ul>
+<p>These components are already installed in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above if needed and saved in the designated folders.</p>
+<h3 id="file-structure">File structure</h3>
+<p>A typical file structure for the Knowledge Grid Starter Kit will look like this:</p>
+<pre><code>├── fcrepo4-vagrant
+├── library
+│   ├── init_script.sh
+│   └── kgrid-library-0.2.4-SNAPSHOT.war
+├── activator
+│   ├── adapters
+│   │   ├── python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar
+│   ├── shelf
+│   │   ├── 99999-fk4571p57h
+│   │   ├── 99999-fk4n87hh26
+│   │   ├ ...
+│   │   ├ ...
+│   │   └── 99999-fk4805c32z
+│   ├── init_script.sh
+│   └── activator-0.5.8-SNAPSHOT.war
+├── cancer-advisor
+│   ├── css
+│   ├── js
+│   ├── data
+│   └── index.html
+└── kgrid_script.sh
+</code></pre><p>Now, everything is ready.</p>
+<h3 id="section-3-griddy-up-and-run-">Section 3. Griddy Up and Run!</h3>
+<p>At the root of Knowledge Grid Starter Kit, run the script:</p>
+<ul>
+<li>For Mac: kgrid_start.sh</li>
+<li>For Windows: kgrid_start.bat</li>
+</ul>
+<p>For the first time run, an initialization process is required to provision the Fedora vagrant, add the knowledge objects to the library and load the knowledge objects to the activator.</p>
+<p>To perform the initialization, run the script with the option of <code>init</code></p>
+<p>  <code>kgrid_start --init</code></p>
+<p>To start the provisioned knowledge grid, simply run</p>
+<p>  <code>kgrid_start</code></p>
+<p>The script will:</p>
+<ul>
+<li><p>start the Fedora vagrant virtaul machine;</p>
+</li>
+<li><p>Provision the vagrant virtual machine (init only);</p>
+</li>
+<li><p>start Knowledge Grid Library service at localhost:8090;</p>
+</li>
+<li><p>start knowledge Grid Activator at loalhost:8091;</p>
+</li>
+<li><p>add the knowledge objects to the library (init only);</p>
+</li>
+<li><p>load the knowledge objects to the activtor (init only);</p>
+</li>
+<li><p>launch Knowledge Grid Library Web App in the browser;</p>
+</li>
+<li><p>launch the client Web App in the browser.</p>
+</li>
+</ul>
+<h3 id="appendix-convert-md-file-to-html-file">Appendix - Convert MD file to HTML file</h3>
+<p>A node.js module <code>markdown-html</code> can be used to convert this Markeddown file into HTML.</p>
+<p>To install, run <code>npm install markdown-html -g</code></p>
+<p>To convert, run <code>markedown-html readme.md -o readme.html -s custom-style.css</code></p>
+
+		</div>
+
+		<script></script>
+	</body>
+</html>
