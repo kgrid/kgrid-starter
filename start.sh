@@ -12,7 +12,7 @@ else
 fi
 
 cd fcrepo4-vagrant-4.5.1
-	echo "Starting vargant"
+	echo "Starting vagrant"
 	vagrant up
 cd ..
 
