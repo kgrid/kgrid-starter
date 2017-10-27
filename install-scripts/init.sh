@@ -17,3 +17,4 @@ curl -XPUT "localhost:8081/knowledgeObject/99999-fk4ff41k51" -d "./activator/she
 
 stop.sh
 popd
+

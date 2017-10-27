@@ -42,3 +42,7 @@ curl -L https://github.com/kgrid/kgrid-activator/releases/download/kgrid-activat
 curl -L https://github.com/kgrid/python-adapter/releases/download/0.5.8-SNAPSHOT/{python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar} --output ../activator/adapters/#1 --silent
 
 # The cancer-advisor client is preinstalled in the kgrid-starter
+
+# Install the node http-server package
+
+npm install http-server -g
