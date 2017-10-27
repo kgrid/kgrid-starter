@@ -24,13 +24,3 @@ if [ ! -f "$hasVBox" -o  $isVersion51 -nq "0" ] ; then
 else 
  	echo "Virtual Box OK!"
 fi
-
-echo "Starting vargant"
-cd fcrepo4-vagrant-4.7.4
-vagrant up
-
-# java -jar Activator/activator-0.5.8-SNAPSHOT.war --server.port=8091 --activator.home=./Activator &
-# java -jar Library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8090 &
-
-# cancer advisor, needs node
-# put things in fedora
