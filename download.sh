@@ -19,5 +19,5 @@ npm view http-server version
 # Download Kgrid components themselves
 #########################################
 
-# curl  [kgrid library release] --output ./library/library.war
+curl https://github.com/kgrid/kgrid-library/releases/download/0.2.4-SNAPSHOT/kgrid-library-0.2.4-SNAPSHOT.war --output ./library/library.war
 # curl  [kgrid library release] --output ./activator/activator.war
