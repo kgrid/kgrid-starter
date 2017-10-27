@@ -17,11 +17,11 @@ cd fcrepo4-vagrant-4.5.1
 cd ..
 
 echo "Starting library"
-java -jar Library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081 &
+java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081 &
 echo $! > ".pids.txt"
 
 echo "Starting activator"
-java -jar Activator/activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.home=Activator --library.url=http://localhost:8081 &
+java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.home=activator --library.url=http://localhost:8081 &
 echo $! >> ".pids.txt"
 
 # cancer advisor, needs node, npm then npm install http-server -g
