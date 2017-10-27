@@ -12,11 +12,8 @@ else
 fi
 
 cd fcrepo4-vagrant-4.5.1
-vagrantStatus=$(echo $(vagrant status | sed -n 3p) | cut -c8-15)
-if [ $vagrantStatus != "running" ] ; then
 	echo "Starting vargant"
 	vagrant up
-fi
 cd ..
 
 echo "Starting library"
