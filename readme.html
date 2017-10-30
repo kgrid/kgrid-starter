@@ -184,37 +184,64 @@ width: 850px;
 <h3 id="section-1-prepare-your-system">Section 1. Prepare your system</h3>
 <p>To set up and run Knowledge Grid from your local machine, the system should have the following required software:</p>
 <ul>
-<li><p><a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8</a></p>
-</li>
-<li><p><a href="https://www.virtualbox.org/wiki/Downloads">Oracle VirtualBox</a></p>
-</li>
-<li><p><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></p>
-</li>
-<li><p><a href="https://www.npmjs.com/get-npm">Node.js and npm</a></p>
-</li>
+<li><a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8</a></li>
+<li><a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_1">Oracle VirtualBox 5.1</a> - Note get VirtualBox version 5.1 which is compatible with Vagrant. </li>
+<li><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></li>
+<li><a href="https://www.npmjs.com/get-npm">Node.js and npm</a> - Note: get the long-term release version.</li>
 </ul>
-<p>If needed, these software can be found in the folder of &#39;Downloads&#39; in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above.</p>
 <h3 id="section-2-download-kgrid-components-and-provision">Section 2. Download KGRID Components and Provision</h3>
-<p>Once the system has all prerequisites, the following KGRID Components are needed:</p>
+<p>Once the system has all prerequisites, download and initialize the kgrid-starter from the <a href="https://github.com/kgrid/kgrid-starter/releases">Kgrid Starter release page</a>. Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like <code>kgrid-starter-0.5</code> will be created. Change to that folder. </p>
+<p>The starter includes or sets up the following KGRID Components:</p>
+<h4 id="components-already-installed-with-the-kgrid-starter">Components already installed with the kgrid-starter</h4>
 <ul>
-<li><p><a href="https://github.com/kgrid/fcrepo4-vagrant/releases">Knowledge Grid - customized Fedora 4 Vagrant Virtual Machine</a> in the folder of <code>\fcrepo4-vagrant</code></p>
-</li>
-<li><p><a href="https://github.com/kgrid/kgrid-library/releases">Knowledge Grid Library</a> in the folder of <code>\library</code></p>
-</li>
-<li><p><a href="https://github.com/kgrid/kgrid-activator/releases">Knowledge Grid Activator</a> in the folder of <code>\activator</code></p>
-</li>
-<li><p><a href="https://github.com/kgrid/python-adapter/releases">Knowledge Grid Python Adapter</a> in the folder of <code>\activator\adapters</code></p>
-</li>
-<li><p><a href="KO Pack links">Knowledge Grid Starter Sample Knowledge Objects</a> in the folder of <code>\activator\shelf</code></p>
-</li>
-<li><p><a href="https://github.com/kgrid/cancer-advisor/releases">Knowledge Grid Starter Client App</a> in the folder of <code>\cancer-advisor-0.5</code></p>
-</li>
+<li><a href="https://github.com/kgrid/fcrepo4-vagrant/releases">Fedora Commons - Fedora 4 Vagrant Virtual Machine</a> preinstalled in the folder of <code>\fcrepo4-vagrant</code></li>
+<li><a href="https://github.com/kgrid/cancer-advisor/releases">Knowledge Grid Starter Client App (Cancer Advisor)</a> pre-installed in the folder of <code>\cancer-advisor-0.5</code></li>
+<li><a href="KO Pack links">Knowledge Grid Starter Sample Knowledge Objects</a> in the folder of <code>\activator\shelf</code></li>
 </ul>
-<p>These components are already installed in Knowledge Grid Starter Kit, or be downloaded from the respective links shown above if needed and saved in the designated folders.</p>
-<h3 id="file-structure">File structure</h3>
+<h4 id="components-to-be-downloaded-and-saved-in-the-designated-folders-">Components to be downloaded and saved in the designated folders.</h4>
+<p>This can be done manually or the <code>download</code> script in the <code>install_scripts</code> can be run.</p>
+<pre><code class="lang-bash">  cd /[path to kgrid_starter]/kgrid-starter-0.5
+  ./install-scripts/download.sh
+</code></pre>
+<ul>
+<li><a href="https://github.com/kgrid/kgrid-library/releases">Knowledge Grid Library</a> in the folder of <code>\library</code></li>
+<li><a href="https://github.com/kgrid/kgrid-activator/releases">Knowledge Grid Activator</a> in the folder of <code>\activator</code></li>
+<li><a href="https://github.com/kgrid/python-adapter/releases">Knowledge Grid Python Adapter</a> in the folder of <code>\activator\adapters</code></li>
+</ul>
+<h5 id="finally-the-client-app-needs-http-server-installed">Finally, the client app needs <code>http-server</code> installed</h5>
+<p>  <code>npm install -g http-server</code></p>
+<p>Now, everything is ready.</p>
+<h3 id="section-3-griddy-up-and-run-">Section 3. Griddy Up and Run!</h3>
+<h4 id="initialize-the-fedora-repo-and-the-library-first-time-">Initialize the Fedora repo and the library (first time)</h4>
+<p>The first time the Fedora repo is started (via <code>kg-start.sh</code>) there is a lengthy provisioning proces (one time only). Also, knowledge objects need to be added to the library using the <code>init.sh</code> script (the Activator is pre-loaded). </p>
+<pre><code class="lang-bash">cd /[path to kgrid_starter]/kgrid-starter-0.5
+./kg-start.sh # This will take a while, also starts the Library  
+./install-scripts/init.sh # This loads objects in the library
+</code></pre>
+<p><strong>The Library, Activator, and Cancer Advisor client should be running!</strong></p>
+<p>Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to: </p>
+<ul>
+<li>localhost:8081/health to see the status of the library</li>
+<li>localhost:8080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running</li>
+<li>localhost:8082/shelf to see objects loaded in the Activator </li>
+</ul>
+<h4 id="starting-and-stopping-the-knowledge-grid">Starting and stopping the Knowledge Grid</h4>
+<p>Run the start script in the root of Knowledge Grid Starter Kit (e.g. <code>kgrid-starter-0.5</code>):</p>
+<pre><code class="lang-bash">  cd /[path to kgrid_starter]/kgrid-starter-0.5
+  ./kg-start.sh   # Use kgrid_start.bat in Windows
+</code></pre>
+<p>  This will start: </p>
+<ul>
+<li>the Fedora vagrant virtual machine on <code>localhost:8080</code>;</li>
+<li>Knowledge Grid Library service at <code>localhost:8081</code>;</li>
+<li>Knowledge Grid Activator at <code>localhost:8082</code>;</li>
+<li>the Cancer Advisor (via <code>http-server</code>) on <code>localhost:8083</code></li>
+</ul>
+<p>And it will launch Knowledge Grid Library Web App and the Cancer Advisor in the browser.</p>
+<hr>
+<h3 id="appendix-a-file-structure">Appendix A - File structure</h3>
 <p>A typical file structure for the Knowledge Grid Starter Kit will look like this:</p>
-<pre><code>├── downloads
-├── fcrepo4-vagrant-4.5.1
+<pre><code>├── fcrepo4-vagrant-4.5.1
 ├── library
 │   └── kgrid-library-0.2.4-SNAPSHOT.war
 ├── activator
@@ -230,7 +257,6 @@ width: 850px;
 ├── install-scripts
 │   ├── download.sh
 │   ├── init.sh
-│   └── install.sh
 ├── cancer-advisor-0.5
 │   ├── css
 │   ├── js
@@ -238,44 +264,13 @@ width: 850px;
 │   └── index.html
 ├── readme.md
 ├── readme.html
-├── restart.sh
-├── stop.sh
-└── start.sh
-</code></pre><p>Now, everything is ready.</p>
-<h3 id="section-3-griddy-up-and-run-">Section 3. Griddy Up and Run!</h3>
-<p>At the root of Knowledge Grid Starter Kit, run the script:</p>
-<ul>
-<li>For Mac: kgrid_start.sh</li>
-<li>For Windows: kgrid_start.bat</li>
-</ul>
-<p>For the first time run, an initialization process is required to provision the Fedora vagrant, add the knowledge objects to the library and load the knowledge objects to the activator.</p>
-<p>To perform the initialization, run the script with the option of <code>init</code></p>
-<p>  <code>kgrid_start --init</code></p>
-<p>To start the provisioned knowledge grid, simply run</p>
-<p>  <code>kgrid_start</code></p>
-<p>The script will:</p>
-<ul>
-<li><p>start the Fedora vagrant virtaul machine;</p>
-</li>
-<li><p>Provision the vagrant virtual machine (init only);</p>
-</li>
-<li><p>start Knowledge Grid Library service at localhost:8081;</p>
-</li>
-<li><p>start knowledge Grid Activator at loalhost:8082;</p>
-</li>
-<li><p>add the knowledge objects to the library (init only);</p>
-</li>
-<li><p>load the knowledge objects to the activtor (init only);</p>
-</li>
-<li><p>launch Knowledge Grid Library Web App in the browser;</p>
-</li>
-<li><p>launch the client Web App in the browser.</p>
-</li>
-</ul>
-<h3 id="appendix-convert-md-file-to-html-file">Appendix - Convert MD file to HTML file</h3>
-<p>A node.js module <code>markdown-html</code> can be used to convert this Markeddown file into HTML.</p>
+├── kg-restart.sh
+├── kg-stop.sh
+└── kg-start.sh
+</code></pre><h3 id="appendix-b-convert-md-file-to-html-file">Appendix B - Convert MD file to HTML file</h3>
+<p>A node.js module <code>markdown-html</code> can be used to convert this Markdown file into HTML.</p>
 <p>To install, run <code>npm install markdown-html -g</code></p>
-<p>To convert, run <code>markedown-html readme.md -o readme.html -s custom-style.css</code></p>
+<p>To convert, run <code>markdown-html readme.md -o readme.html -s custom-style.css</code></p>
 
 		</div>
 

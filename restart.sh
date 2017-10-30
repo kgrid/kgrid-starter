@@ -1,3 +1,3 @@
 #!/bin/sh
-./stop.sh
-./start.sh
+kg-stop.sh
+kg-start.sh
