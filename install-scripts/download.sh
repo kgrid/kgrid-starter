@@ -12,19 +12,6 @@ VirtualBox
 Vagrant
 Node.js (with NPM and the 'http-server' package)
 
-Here's what we found:
-"
-
-java -version 2>&1 | grep Runtime
-echo "VirtualBox: `vboxmanage -version`"
-vagrant --version
-echo "Node.js: `node --version`"
-echo "http-server: `npm list -g http-server version | grep 'http-server'`"
-
-# tell the user that they need to install jdk8, virtualbox, vagrant, node.js
-echo "
-Please note any missing tools and install them for your environment.
-
 See the readme.html in this directory for details.
 "
 
