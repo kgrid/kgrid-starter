@@ -17,7 +17,7 @@ cd fcrepo4-vagrant-4.5.1
 cd ..
 
 echo "Starting library"
-java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081 &
+java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081 --ezid.mock=true &
 echo $! > ".pids.txt"
 
 echo "Starting activator"
