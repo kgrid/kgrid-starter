@@ -1,6 +1,10 @@
 ## Knowledge Grid Starter Installation and Set Up Guide
 
 
+If you haven't done so, download the kgrid-starter from the [Kgrid Starter release page](https://github.com/kgrid/kgrid-starter/releases). Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder.
+
+Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder.
+
 ### Section 1. Prepare your system
 
 To set up and run Knowledge Grid from your local machine, the system should have the following required software:
@@ -14,10 +18,6 @@ To set up and run Knowledge Grid from your local machine, the system should have
 
 
 ### Section 2. Download KGRID Components and Provision
-
-If you haven't done so, download the kgrid-starter from the [Kgrid Starter release page](https://github.com/kgrid/kgrid-starter/releases). Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder.
-
-Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder.
 
 The starter includes or sets up the following KGRID Components:
 

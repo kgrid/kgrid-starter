@@ -35,7 +35,6 @@ java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.
 
 # cancer advisor, needs node, npm then npm install http-server -g
 echo "Starting demo server on http://localhost:8083"
-http-server -p 8083 &
+http-server -p 8083 -o &
 echo "Demo server started"
 # echo $! >> "../.pids.txt"
-
