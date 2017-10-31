@@ -1,7 +1,5 @@
-cd\
-cd fc451
-taskkill /f /fi "imagename eq cmd.exe"
-
+cd fcrepo4-vagrant-4.5.1
 echo "Stopping vagrant"
 vagrant halt
-exit
+cd ..
+taskkill /f /fi "imagename eq cmd.exe"
