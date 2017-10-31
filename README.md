@@ -7,7 +7,10 @@ To set up and run Knowledge Grid from your local machine, the system should have
 - [Java SE Development Kit 8](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note get VirtualBox version 5.1 which is compatible with Vagrant. 
 - [Vagrant](https://www.vagrantup.com/downloads.html)
-- [Node.js and npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version.
+- [Node.js + npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version. 
+- After installing Node.js and `npm`, install the demo server (to run client apps) using:  
+  `npm install -g http-server`
+
 
 ### Section 2. Download KGRID Components and Provision
 
@@ -32,11 +35,6 @@ This can be done manually or the `download` script in the `install_scripts` can 
 - [Knowledge Grid Library](https://github.com/kgrid/kgrid-library/releases) in the folder of `\library`
 - [Knowledge Grid Activator](https://github.com/kgrid/kgrid-activator/releases) in the folder of `\activator`
 - [Knowledge Grid Python Adapter](https://github.com/kgrid/python-adapter/releases) in the folder of `\activator\adapters`
-
-##### Finally, the client app needs `http-server` installed
-  `npm install -g http-server`
-
-
 
 Now, everything is ready.
 
