@@ -12,7 +12,7 @@ cls
 
 echo "Starting activator"
 cd activator
-start /b  java -jar activator-0.5.8-SNAPSHOT.war --server.port=8082 --library.url=http://localhost:8081 &
+start /b  java -jar activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.home=activator --library.url=http://localhost:8081 &
 cd..
 timeout /t 15
 

@@ -183,6 +183,7 @@ width: 850px;
 			<h2 id="knowledge-grid-starter-installation-and-set-up-guide">Knowledge Grid Starter Installation and Set Up Guide</h2>
 <p>If you haven&#39;t done so, download the kgrid-starter from the <a href="https://github.com/kgrid/kgrid-starter/releases">Kgrid Starter release page</a>. Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like <code>kgrid-starter-0.5</code> will be created. Change to that folder.</p>
 <p>Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder.</p>
+<p>To install and set up the starter kit, it is preferred to have intermediate skills with the system and using the command line.</p>
 <h3 id="section-1-prepare-your-system">Section 1. Prepare your system</h3>
 <p>To set up and run Knowledge Grid from your local machine, the system should have the following required software:</p>
 <ul>
@@ -192,6 +193,7 @@ width: 850px;
 <li><a href="https://www.npmjs.com/get-npm">Node.js + npm</a> - Note: get the long-term release version.</li>
 <li>After installing Node.js and <code>npm</code>, install the demo server (to run client apps) using:<br><code>npm install -g http-server</code></li>
 </ul>
+<p>Note: If you are using a Windows system, you will need to download and install cURL at <a href="http://www.confusedbycode.com/curl">cURL Download Page</a></p>
 <h3 id="section-2-download-kgrid-components-and-provision">Section 2. Download KGRID Components and Provision</h3>
 <p>The starter includes or sets up the following KGRID Components:</p>
 <h4 id="components-already-installed-with-the-kgrid-starter">Components already installed with the kgrid-starter</h4>
@@ -201,21 +203,23 @@ width: 850px;
 <li><a href="KO Pack links">Knowledge Grid Starter Sample Knowledge Objects</a> in the folder of <code>\activator\shelf</code></li>
 </ul>
 <h4 id="components-to-be-downloaded-and-saved-in-the-designated-folders-">Components to be downloaded and saved in the designated folders.</h4>
-<p>This can be done manually or the <code>download</code> script in the <code>install_scripts</code> can be run.</p>
+<p>To download the needed components, open a terminal and entering the commands to run the <code>download</code> script in the <code>install_scripts</code>:</p>
 <pre><code class="lang-bash">  cd /[path to kgrid_starter]/kgrid-starter-0.5
-  ./install-scripts/download.sh
+  ./install-scripts/download.sh     # Use download.bat in Windows
 </code></pre>
+<p>Or, to download manually, use the follwoing links and save the fiels into the designated folders:</p>
 <ul>
 <li><a href="https://github.com/kgrid/kgrid-library/releases">Knowledge Grid Library</a> in the folder of <code>\library</code></li>
 <li><a href="https://github.com/kgrid/kgrid-activator/releases">Knowledge Grid Activator</a> in the folder of <code>\activator</code></li>
 <li><a href="https://github.com/kgrid/python-adapter/releases">Knowledge Grid Python Adapter</a> in the folder of <code>\activator\adapters</code></li>
 </ul>
-<p>Now, everything is ready.</p>
+<p>Now, everything is ready. Next step: Start the Knowledge Grid and initialize the repo.</p>
 <h3 id="section-3-griddy-up-and-run-">Section 3. Griddy Up and Run!</h3>
 <h4 id="initialize-the-fedora-repo-and-the-library-first-time-">Initialize the Fedora repo and the library (first time)</h4>
-<p>The first time the Fedora repo is started (via <code>kg-start.sh</code>) there is a lengthy provisioning proces (one time only). Also, knowledge objects need to be added to the library using the <code>init.sh</code> script (the Activator is pre-loaded).</p>
+<p>The first time the Fedora repo is started (via <code>kg-start.sh</code>) there is a lengthy provisioning process (one time only). Also, knowledge objects need to be added to the library using the <code>init.sh</code> script (the Activator is pre-loaded).</p>
 <pre><code class="lang-bash">cd /[path to kgrid_starter]/kgrid-starter-0.5
-./kg-start.sh # This will take a while, also starts the Library  
+./kg-start.sh   # Use kg-start.bat for Windows
+                # This will take a while, also starts the Library  
 ./install-scripts/init.sh # This loads objects in the library
 </code></pre>
 <p><strong>The Library, Activator, and Cancer Advisor client should be running!</strong></p>
@@ -228,7 +232,7 @@ width: 850px;
 <h4 id="starting-and-stopping-the-knowledge-grid">Starting and stopping the Knowledge Grid</h4>
 <p>Run the start script in the root of Knowledge Grid Starter Kit (e.g. <code>kgrid-starter-0.5</code>):</p>
 <pre><code class="lang-bash">  cd /[path to kgrid_starter]/kgrid-starter-0.5
-  ./kg-start.sh   # Use kg_start.bat in Windows
+  ./kg-start.sh   # Use kg-start.bat in Windows
 </code></pre>
 <p>  This will start:</p>
 <ul>

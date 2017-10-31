@@ -5,6 +5,8 @@ If you haven't done so, download the kgrid-starter from the [Kgrid Starter relea
 
 Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder.
 
+To install and set up the starter kit, it is preferred to have intermediate skills with the system and using the command line.
+
 ### Section 1. Prepare your system
 
 To set up and run Knowledge Grid from your local machine, the system should have the following required software:
@@ -16,6 +18,7 @@ To set up and run Knowledge Grid from your local machine, the system should have
 - After installing Node.js and `npm`, install the demo server (to run client apps) using:  
   `npm install -g http-server`
 
+Note: If you are using a Windows system, you will need to download and install cURL at [cURL Download Page](http://www.confusedbycode.com/curl)
 
 ### Section 2. Download KGRID Components and Provision
 
@@ -28,29 +31,33 @@ The starter includes or sets up the following KGRID Components:
 - [Knowledge Grid Starter Sample Knowledge Objects](KO Pack links) in the folder of `\activator\shelf`
 
 #### Components to be downloaded and saved in the designated folders.
-This can be done manually or the `download` script in the `install_scripts` can be run.
+
+To download the needed components, open a terminal and entering the commands to run the `download` script in the `install_scripts`:
 
 ```bash
   cd /[path to kgrid_starter]/kgrid-starter-0.5
-  ./install-scripts/download.sh
+  ./install-scripts/download.sh     # Use download.bat in Windows
 ```
+
+Or, to download manually, use the follwoing links and save the fiels into the designated folders:
 
 - [Knowledge Grid Library](https://github.com/kgrid/kgrid-library/releases) in the folder of `\library`
 - [Knowledge Grid Activator](https://github.com/kgrid/kgrid-activator/releases) in the folder of `\activator`
 - [Knowledge Grid Python Adapter](https://github.com/kgrid/python-adapter/releases) in the folder of `\activator\adapters`
 
-Now, everything is ready.
+Now, everything is ready. Next step: Start the Knowledge Grid and initialize the repo.
 
 
 ### Section 3. Griddy Up and Run!
 
 #### Initialize the Fedora repo and the library (first time)
 
-The first time the Fedora repo is started (via `kg-start.sh`) there is a lengthy provisioning proces (one time only). Also, knowledge objects need to be added to the library using the `init.sh` script (the Activator is pre-loaded).
+The first time the Fedora repo is started (via `kg-start.sh`) there is a lengthy provisioning process (one time only). Also, knowledge objects need to be added to the library using the `init.sh` script (the Activator is pre-loaded).
 
 ```bash
 cd /[path to kgrid_starter]/kgrid-starter-0.5
-./kg-start.sh # This will take a while, also starts the Library  
+./kg-start.sh   # Use kg-start.bat for Windows
+                # This will take a while, also starts the Library  
 ./install-scripts/init.sh # This loads objects in the library
 ```
 
@@ -69,7 +76,7 @@ Run the start script in the root of Knowledge Grid Starter Kit (e.g. `kgrid-star
 
   ```bash
   cd /[path to kgrid_starter]/kgrid-starter-0.5
-  ./kg-start.sh   # Use kg_start.bat in Windows
+  ./kg-start.sh   # Use kg-start.bat in Windows
   ```
 
   This will start:
