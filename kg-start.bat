@@ -18,10 +18,4 @@ timeout /t 15
 
 echo "Starting cancer advisor"
 cd cancer-advisor
-start /b http-server -p 8083
-:: echo "started cancer advisor"
-
- timeout /t 20
-
- start "" http://localhost:8081/index.html
- start "" http://localhost:8083/index.html?stack=http://localhost:8082
+start /b "Kgrid" http-server -p 8083 -o

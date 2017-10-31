@@ -1,20 +1,24 @@
-## Knowledge Grid Starter Guide
+## Knowledge Grid Starter Installation and Set up Guide
+
+### To download Knowledge Grid Starter Kit, Go to [Kgrid Starter release page](https://github.com/kgrid/kgrid-starter/releases).
+After you have completed the steps detailed in this guide and started the Knowledge Grid, a welcome page will show up in your browser. Or, you can browser the page here: [Welcome to Knowledge Grid](index.html)
+
 
 ### Section 1. Prepare your system
 
 To set up and run Knowledge Grid from your local machine, the system should have the following required software:
 
 - [Java SE Development Kit 8](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note get VirtualBox version 5.1 which is compatible with Vagrant. 
+- [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note get VirtualBox version 5.1 which is compatible with Vagrant.
 - [Vagrant](https://www.vagrantup.com/downloads.html)
-- [Node.js + npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version. 
+- [Node.js + npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version.
 - After installing Node.js and `npm`, install the demo server (to run client apps) using:  
   `npm install -g http-server`
 
 
 ### Section 2. Download KGRID Components and Provision
 
-Once the system has all prerequisites, download and initialize the kgrid-starter from the [Kgrid Starter release page](https://github.com/kgrid/kgrid-starter/releases). Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder. 
+Once the system has all prerequisites, download and initialize the kgrid-starter from the [Kgrid Starter release page](https://github.com/kgrid/kgrid-starter/releases). Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder.
 
 The starter includes or sets up the following KGRID Components:
 
@@ -24,12 +28,12 @@ The starter includes or sets up the following KGRID Components:
 - [Knowledge Grid Starter Client App (Cancer Advisor)](https://github.com/kgrid/cancer-advisor/releases) pre-installed in the folder of `\cancer-advisor-0.5`
 - [Knowledge Grid Starter Sample Knowledge Objects](KO Pack links) in the folder of `\activator\shelf`
 
-#### Components to be downloaded and saved in the designated folders. 
+#### Components to be downloaded and saved in the designated folders.
 This can be done manually or the `download` script in the `install_scripts` can be run.
 
 ```bash
   cd /[path to kgrid_starter]/kgrid-starter-0.5
-  ./install-scripts/download.sh 
+  ./install-scripts/download.sh
 ```
 
 - [Knowledge Grid Library](https://github.com/kgrid/kgrid-library/releases) in the folder of `\library`
@@ -43,7 +47,7 @@ Now, everything is ready.
 
 #### Initialize the Fedora repo and the library (first time)
 
-The first time the Fedora repo is started (via `kg-start.sh`) there is a lengthy provisioning proces (one time only). Also, knowledge objects need to be added to the library using the `init.sh` script (the Activator is pre-loaded). 
+The first time the Fedora repo is started (via `kg-start.sh`) there is a lengthy provisioning proces (one time only). Also, knowledge objects need to be added to the library using the `init.sh` script (the Activator is pre-loaded).
 
 ```bash
 cd /[path to kgrid_starter]/kgrid-starter-0.5
@@ -53,30 +57,30 @@ cd /[path to kgrid_starter]/kgrid-starter-0.5
 
 __The Library, Activator, and Cancer Advisor client should be running!__
 
-Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to: 
+Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to:
 
 - localhost:8081/health to see the status of the library
 - localhost:8080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running
-- localhost:8082/shelf to see objects loaded in the Activator 
+- localhost:8082/shelf to see objects loaded in the Activator
 
 
-#### Starting and stopping the Knowledge Grid 
+#### Starting and stopping the Knowledge Grid
 
 Run the start script in the root of Knowledge Grid Starter Kit (e.g. `kgrid-starter-0.5`):
 
   ```bash
   cd /[path to kgrid_starter]/kgrid-starter-0.5
-  ./kg-start.sh   # Use kgrid_start.bat in Windows
-  ``` 
-  
-  This will start: 
+  ./kg-start.sh   # Use kg_start.bat in Windows
+  ```
+
+  This will start:
 
   - the Fedora vagrant virtual machine on `localhost:8080`;
   - Knowledge Grid Library service at `localhost:8081`;
   - Knowledge Grid Activator at `localhost:8082`;
-  - the Cancer Advisor (via `http-server`) on `localhost:8083`
+  - A HTTP server (via `http-server`) on `localhost:8083`, hosting the Cancer Advisor at `/cancer-advisor-0.5`
 
-And it will launch Knowledge Grid Library Web App and the Cancer Advisor in the browser.
+And it will launch a welcome page in the browser, which contains the links to Knowledge Grid Library Web App, the Cancer Advisor and other useful resources.
 
 
 ---
