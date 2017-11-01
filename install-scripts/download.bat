@@ -1,15 +1,4 @@
-echo "
-The following tools are required for running the Knowledge grid:
-
-JDK 8
-VirtualBox
-Vagrant
-Node.js (with NPM and the 'http-server' package)
-
-See the readme.html in this directory for details.
-"
-
-:: Download Kgrid components themselves
+REM Download Kgrid components themselves
 
 :: The Fedora Commons repo (via fcrepo4-vagrant) is preinstalled in the kgrid-starter.
 :: It needs to be initialized with 'vagrant up' which called from the init script
