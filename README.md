@@ -16,3 +16,12 @@ Note: If you are using a Knowledge Starter Kit Drive, the kit has been unzipped.
 
 
 ### Enjoy!
+
+
+### Appendix - Convert MD file to HTML file
+
+A node.js module `markdown-html` can be used to convert this Markdown file into HTML.
+
+To install, run `npm install markdown-html -g` from the command line.
+
+To convert, run `markdown-html readme.md -o readme.html -s custom-style.css` from the command line.

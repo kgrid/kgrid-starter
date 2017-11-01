@@ -13,8 +13,8 @@ To install and set up the starter kit, you'll need administrator privileges on t
 
 To set up and run Knowledge Grid from your local machine, the system should have the following required software:
 
-- [Java SE Development Kit 8](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note get VirtualBox version 5.1 which is compatible with Vagrant.
+- [Java SE Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - Note: get Java SE 8
+- [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note: get VirtualBox version 5.1 which is compatible with Vagrant.
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [Node.js + npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version.
 - After installing Node.js and `npm`, install the demo server (to run client apps). From the command line:  
@@ -195,10 +195,5 @@ A typical file structure for the Knowledge Grid Starter Kit will look like this:
 ```
 
 
-### Appendix C - Convert MD file to HTML file
-
-A node.js module `markdown-html` can be used to convert this Markdown file into HTML.
-
-To install, run `npm install markdown-html -g` from the command line.
-
-To convert, run `markdown-html readme.md -o readme.html -s custom-style.css` from the command line.
+#### Questions?
+Send an email to Knowledge Grid Development Team at dlhs.knowledge.grid@umich.edu.

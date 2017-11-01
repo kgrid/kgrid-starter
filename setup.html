@@ -132,11 +132,12 @@ code {
 padding: 2px 4px;
 font-size: 90%;
 color: #333333;
-background-color: #f9f2f4;
+background-color: #f5f5f5;
 border-radius: 4px;
 }
 pre {
-border-left: 5px solid #eee;
+  background-color: #f5f5f5;
+border-left: 2px solid #eee;
 margin-left: 2em;
 padding-left: 1em;
 }
@@ -171,7 +172,7 @@ font-style: italic;
 background: #FFF;
 padding: 30px 50px;
 margin: 0 auto;
-width: 850px;
+width: 960px;
 }
 
 </style>
@@ -188,8 +189,8 @@ width: 850px;
 <h3 id="section-1-prepare-your-system">Section 1. Prepare your system</h3>
 <p>To set up and run Knowledge Grid from your local machine, the system should have the following required software:</p>
 <ul>
-<li><a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8</a></li>
-<li><a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_1">Oracle VirtualBox 5.1</a> - Note get VirtualBox version 5.1 which is compatible with Vagrant.</li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE Development Kit 8</a> - Note: get Java SE 8</li>
+<li><a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_1">Oracle VirtualBox 5.1</a> - Note: get VirtualBox version 5.1 which is compatible with Vagrant.</li>
 <li><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></li>
 <li><a href="https://www.npmjs.com/get-npm">Node.js + npm</a> - Note: get the long-term release version.</li>
 <li>After installing Node.js and <code>npm</code>, install the demo server (to run client apps). From the command line:<br><code>npm install -g http-server</code></li>
@@ -318,10 +319,8 @@ cd ..
 ├── kg-start.sh
 ├── kg-stop.bat
 └── kg-stop.sh
-</code></pre><h3 id="appendix-c-convert-md-file-to-html-file">Appendix C - Convert MD file to HTML file</h3>
-<p>A node.js module <code>markdown-html</code> can be used to convert this Markdown file into HTML.</p>
-<p>To install, run <code>npm install markdown-html -g</code> from the command line.</p>
-<p>To convert, run <code>markdown-html readme.md -o readme.html -s custom-style.css</code> from the command line.</p>
+</code></pre><h4 id="questions-">Questions?</h4>
+<p>Send an email to Knowledge Grid Development Team at dlhs.knowledge.grid@umich.edu.</p>
 
 		</div>
 
