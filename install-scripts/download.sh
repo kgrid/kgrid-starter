@@ -27,10 +27,10 @@ echo "Downloading the Library (kgrid-library-0.2.4-SNAPSHOT.war)"
 curl -L https://github.com/kgrid/kgrid-starter/releases/download/0.6/{kgrid-library-0.2.4-SNAPSHOT.war} --output ./library/#1
 
 echo "Downloading the Activator (activator-0.5.8-SNAPSHOT.war)"
-curl -L https://github.com/kgrid/kgrid-activator/releases/download/0.5.8-SNAPSHOT/{activator-0.5.8-SNAPSHOT.war} --output ./activator/#1
+curl -L https://github.com/kgrid/kgrid-starter/releases/download/0.6/{activator-0.5.8-SNAPSHOT.war} --output ./activator/#1
 
 echo "Downloading the Python adapter (python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar)"
-curl -L https://github.com/kgrid/python-adapter/releases/download/0.5.8-SNAPSHOT/{python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar} --output ./activator/adapters/#1
+curl -L https://github.com/kgrid/kgrid-starter/releases/download/0.6/{python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar} --output ./activator/adapters/#1
 
 echo "
 Finished downloading.... If there were errors see the setup guide,
