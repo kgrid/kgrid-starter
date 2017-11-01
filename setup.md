@@ -1,11 +1,13 @@
 ## Knowledge Grid Starter Installation and Set Up Guide
 
 
-If you haven't done so, download the kgrid-starter from the [Kgrid Starter release page](https://github.com/kgrid/kgrid-starter/releases). Choose the latest version. Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder.
+If you haven't done so, download the kgrid-starter ("Source code (zip)")from the [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest). Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder.
 
-Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder.
+Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder. Double click `setup.html` (this file) to view a local copy of this getting started guide, or run `open setup.html` to launch a browser window with these instructions.
 
-To install and set up the starter kit, it is preferred to have intermediate skills with the system and using the command line.
+To install and set up the starter kit, you'll need administrator privileges on the machine. it is preferred to have intermediate skills with installing software and using the command line.
+
+#### Windows and Linux users: These instructions are tailored for installing on a Mac. Windows users can use the `.bat` files in the kgrid-starter folder, and your operating system commands for navigating, installing, and running some applications may be different. See Appendix A for more info.
 
 ### Section 1. Prepare your system
 
@@ -15,7 +17,7 @@ To set up and run Knowledge Grid from your local machine, the system should have
 - [Oracle VirtualBox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Note get VirtualBox version 5.1 which is compatible with Vagrant.
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [Node.js + npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version.
-- After installing Node.js and `npm`, install the demo server (to run client apps) using:  
+- After installing Node.js and `npm`, install the demo server (to run client apps). From the command line:  
   `npm install -g http-server`
 
 Note: If you are using a Windows system, you will need to download and install cURL at [cURL Download Page](http://www.confusedbycode.com/curl)
@@ -32,7 +34,7 @@ The starter includes or sets up the following KGRID Components:
 
 #### Components to be downloaded and saved in the designated folders.
 
-To download the needed components, open a terminal and entering the commands to run the `download` script in the `install_scripts`:
+Open a terminal, change to the kgrid starter folder, and run the `download` script in the `install_scripts`:
 
 ```bash
   cd /[path to kgrid_starter]/kgrid-starter-0.5
@@ -91,7 +93,10 @@ And it will launch a welcome page in the browser, which contains the links to Kn
 
 ---
 
-### Appendix A - File structure
+### Appendix A - Setup for other operating systems
+
+
+### Appendix B - File structure
 A typical file structure for the Knowledge Grid Starter Kit will look like this:
 
 ```
@@ -124,7 +129,7 @@ A typical file structure for the Knowledge Grid Starter Kit will look like this:
 ```
 
 
-### Appendix B - Convert MD file to HTML file
+### Appendix C - Convert MD file to HTML file
 
 A node.js module `markdown-html` can be used to convert this Markdown file into HTML.
 
