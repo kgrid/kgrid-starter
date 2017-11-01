@@ -1,11 +1,15 @@
 ## Knowledge Grid Starter Installation and Set Up Guide
 
 
-If you haven't done so, download the kgrid-starter ("Source code (zip)")from the [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest). Download and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-0.5` will be created. Change to that folder.
+If you haven't done so, download the kgrid-starter ("Source code (zip)") from the [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest) and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-x.y` will be created.
 
-Or, if you have a starter kit drive, the kit is aleardy unzipped into the folder. Double click `setup.html` (this file) to view a local copy of this getting started guide, or run `open setup.html` to launch a browser window with these instructions.
+Or, if you have a starter kit drive, copy the `kgrid-starter-x.y` folder to your desktop.  
+
+Change to the `kgrid-starter-x.y` folder and double click `setup.html` (this file) to view a local copy of this getting started guide, or run `open setup.html` to launch a browser window with these instructions.
 
 To install and set up the starter kit, you'll need administrator privileges on the machine. it is preferred to have intermediate skills with installing software and using the command line.
+
+
 
 #### Windows and Linux users: These instructions are tailored for installing on a Mac. Windows users can use the `.bat` files in the kgrid-starter folder, and your operating system commands for navigating, installing, and running some applications may be different. See Appendix A for more info.
 
@@ -31,9 +35,9 @@ vagrant --version                # Vagrant version
 npm list -g http-server version  # http-server version
 ```
 
-### Section 2. Download KGRID Components and Provision
+### Section 2. Download KGRID Components
 
-The starter includes or sets up the following KGRID Components:
+If you are using the pre-configured starter kit drive, skip this section and go to Section 3. If you downloaded the starter kit source from Github, you will need to download  additional KGRID Components:
 
 #### Components already installed with the kgrid-starter
 
