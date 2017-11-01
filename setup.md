@@ -22,6 +22,15 @@ To set up and run Knowledge Grid from your local machine, the system should have
 
 Note: If you are using a Windows system, you will need to download and install cURL at [cURL Download Page](http://www.confusedbycode.com/curl)
 
+To verify the verisons for installed sotware, you can run from the command line:
+
+```
+java -version                    # JAVA version
+vboxmanage -version              # Virtual Box version
+vagrant --version                # Vagrant version
+npm list -g http-server version  # http-server version
+```
+
 ### Section 2. Download KGRID Components and Provision
 
 The starter includes or sets up the following KGRID Components:
@@ -36,16 +45,16 @@ The starter includes or sets up the following KGRID Components:
 
 Open a terminal, change to the kgrid starter folder, and run the `download` script in the `install_scripts`:
 
-```bash
+```
   cd /[path to kgrid_starter]/kgrid-starter-0.5
   ./install-scripts/download.sh     # Use download.bat in Windows
 ```
 
-Or, to download manually, use the follwoing links and save the fiels into the designated folders:
+Or, to download manually, use the following links and save the files into the designated folders:
 
-- [Knowledge Grid Library](https://github.com/kgrid/kgrid-library/releases) in the folder of `\library`
-- [Knowledge Grid Activator](https://github.com/kgrid/kgrid-activator/releases) in the folder of `\activator`
-- [Knowledge Grid Python Adapter](https://github.com/kgrid/python-adapter/releases) in the folder of `\activator\adapters`
+- [Knowledge Grid Library](https://github.com/kgrid/kgrid-starter/releases/latest): Download and save the library file in the folder of `\library`. The war file starts with `kgrid-library`
+- [Knowledge Grid Activator](https://github.com/kgrid/kgrid-starter/releases/latest): Download and save the activator file in the folder of `\activator`. The war file starts with `activator`
+- [Knowledge Grid Python Adapter](https://github.com/kgrid/kgrid-starter/releases/latest): Download and save the pythn adapter file in the folder of `\activator\adapters`.  The jar file starts with `python-adapter`
 
 Now, everything is ready. Next step: Start the Knowledge Grid and initialize the repo.
 
@@ -54,9 +63,7 @@ Now, everything is ready. Next step: Start the Knowledge Grid and initialize the
 
 #### Initialize the Fedora repo and the library (first time)
 
-The first time the Fedora repo is started (via `kg-start.sh`) there is a lengthy provisioning process (one time only). Also, knowledge objects need to be added to the library using the `init.sh` script (the Activator is pre-loaded).
-
-```bash
+```
 cd /[path to kgrid_starter]/kgrid-starter-0.5
 ./kg-start.sh   # Use kg-start.bat for Windows
                 # This will take a while, also starts the Library  
@@ -74,9 +81,9 @@ Browser windows should be launched for the Library and the Cancer Advisor. You c
 
 #### Starting and stopping the Knowledge Grid
 
-Run the start script in the root of Knowledge Grid Starter Kit (e.g. `kgrid-starter-0.5`):
+From the command line, run the start script in the root of Knowledge Grid Starter Kit (e.g. `kgrid-starter-0.5`):
 
-  ```bash
+  ```
   cd /[path to kgrid_starter]/kgrid-starter-0.5
   ./kg-start.sh   # Use kg-start.bat in Windows
   ```
@@ -93,7 +100,60 @@ And it will launch a welcome page in the browser, which contains the links to Kn
 
 ---
 
-### Appendix A - Setup for other operating systems
+### Appendix A - Additional Information for Setup in Windows and manual shutdown
+
+Whereas the shell script is required for Mac/Linux, a batch file is provided to perform the same task for Windows, as indicated in the inline notes above.
+
+To use these scripts in Windows,
+- Open a command terminal and run the scripts from the command line;
+- For downloading Knowledge Grid components, run
+```
+  cd \[path to kgrid_starter]\kgrid-starter-0.6
+  install-scripts\download.bat
+```
+
+- For initialize the Fedora repo and the library (first time), run
+```
+cd \[path to kgrid_starter]\kgrid-starter-0.6
+kg-start.bat                   # This will take a while, also starts the Library  
+install-scripts\init.bat       # This loads objects in the library
+```
+- For starting the knowledge Grid, run
+```
+cd \[path to kgrid_starter]\kgrid-starter-0.5
+kg-start.bat
+```
+- For shutting down, run
+```
+cd \[path to kgrid_starter]\kgrid-starter-0.5
+kg-stop.bat
+```
+The Knowledge Grid components can also be shut down manually by running the comamnds.
+
+In Windows:
+```
+cd \[path to kgrid_starter]\kgrid-starter-0.6
+netstat -ano |findstr 8083     # This will reutrn the process ID (PID) for the http-server
+taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
+netstat -ano |findstr 8082     # This will reutrn the process ID (PID) for the activator
+taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
+netstat -ano |findstr 8081     # This will reutrn the process ID (PID) for the library
+taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
+cd fcrepo4-vagrant-4.5.1
+vagrant halt
+```
+
+In Linux:
+```
+pkill -afl "8081"
+pkill -afl "8082"
+pkill -afl http-server
+cd fcrepo4-vagrant-4.5.1
+vagrant halt
+cd ..
+```
+
+__Warning: The scripts and manual shutdown procedures are only tested on Windows 7 or later and Mac. For other Windows builds, please consult the operating system documentation for the proper commands/options to perform the tasks.__
 
 
 ### Appendix B - File structure
@@ -115,17 +175,23 @@ A typical file structure for the Knowledge Grid Starter Kit will look like this:
 │   └── activator-0.5.8-SNAPSHOT.war
 ├── install-scripts
 │   ├── download.sh
-│   ├── init.sh
+│   ├── download.bat
+│   ├── init.bat
+│   └── init.sh
 ├── cancer-advisor-0.5
 │   ├── css
 │   ├── js
 │   ├── data
 │   └── index.html
 ├── readme.md
-├── readme.html
+├── index.html
+├── setup.html
+├── setup.md
 ├── kg-restart.sh
-├── kg-stop.sh
-└── kg-start.sh
+├── kg-start.bat
+├── kg-start.sh
+├── kg-stop.bat
+└── kg-stop.sh
 ```
 
 
@@ -133,6 +199,6 @@ A typical file structure for the Knowledge Grid Starter Kit will look like this:
 
 A node.js module `markdown-html` can be used to convert this Markdown file into HTML.
 
-To install, run `npm install markdown-html -g`
+To install, run `npm install markdown-html -g` from the command line.
 
-To convert, run `markdown-html readme.md -o readme.html -s custom-style.css`
+To convert, run `markdown-html readme.md -o readme.html -s custom-style.css` from the command line.
