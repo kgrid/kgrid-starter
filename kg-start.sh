@@ -1,5 +1,18 @@
 #!/bin/sh
 
+set -e
+function cleanup {
+	echo "Demo server stopped"
+	echo "Shutting down the Knowledge Grid..."
+	./kg-stop
+	echo "Thanks, bye"
+}
+trap cleanup EXIT
+
+BASEDIR=$(dirname "$0")
+cd $BASEDIR
+
+
 echo "
 Launching the knowledge grid... See the readme file in this directory for details on installation.
 "
@@ -34,7 +47,8 @@ java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=48082 --activator
 # echo $! >> ".pids.txt"
 
 # cancer advisor, needs node, npm then npm install live-server -g
+# To force a particular browser add '--browser="google chrome"'
 echo "Starting demo server on http://localhost:48083"
-live-server --port=48083 --host=localhost --browser="google chrome" &
+live-server --port=48083 --host=localhost &
 echo "Demo server started"
 # echo $! >> "../.pids.txt"

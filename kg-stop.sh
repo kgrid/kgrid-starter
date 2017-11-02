@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#while read pid; do
-#	kill $pid
-#done <.pids.txt
+
+BASEDIR=$(dirname "$0")
+cd $BASEDIR
 
 pkill -afl "48081"
 pkill -afl "48082"
