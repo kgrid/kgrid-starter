@@ -5,7 +5,7 @@ cd..
 
 echo "Starting library"
 ::cd library
-start /min java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081
+start /min java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081 --ezid.mock=true
 ::cd..
 ::timeout /t 20
 ::cls
