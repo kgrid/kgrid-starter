@@ -81,7 +81,10 @@ margin: 1.5em 0 0.5em 0;
 *:first-child {
 margin-top: 0;
 }
-
+p.inst{
+  padding:5px;
+  font-weight:700;
+}
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
 font-weight: bold;
@@ -182,10 +185,22 @@ width: 960px;
 	<body>
 		<div class="container">
 			<h2 id="knowledge-grid-starter-installation-and-set-up-guide">Knowledge Grid Starter Installation and Set Up Guide</h2>
-<p>If you haven&#39;t done so, download the kgrid-starter (&quot;Source code (zip)&quot;) from the <a href="https://github.com/kgrid/kgrid-starter/releases/latest">Kgrid Starter release page (latest version)</a> and unzip (to the Desktop for example). A folder with a name like <code>kgrid-starter-x.y</code> will be created.</p>
-<p>Or, if you have a starter kit drive, copy the <code>kgrid-starter-x.y</code> folder to your desktop.  </p>
-<p>Change to the <code>kgrid-starter-x.y</code> folder and double click <code>setup.html</code> (this file) to view a local copy of this getting started guide, or run <code>open setup.html</code> to launch a browser window with these instructions.</p>
-<p>To install and set up the starter kit, you&#39;ll need administrator privileges on the machine. it is preferred to have intermediate skills with installing software and using the command line.</p>
+<h3 id="quick-start">Quick Start</h3>
+<p>To install and set up the starter kit, you&#39;ll need administrator privileges on your machine, and intermediate skills with installing software and using the command line. For instructions on setting up your machine, see <strong><em>Section 1. Prepare your system</em></strong></p>
+<ol>
+<li>Download the kgrid-starter source zip from <a href="https://github.com/kgrid/kgrid-starter/releases/latest">Kgrid Starter release page (latest version)</a> and unzip it (for example on your Desktop). Open a terminal window, and navigate to the <code>../kgrid-starter-x.y</code> folder.</li>
+</ol>
+<p>If using the kgrid-starter USB stick just copy <code>/kgrid-starter-x.y</code> to your Desktop—it&#39;s already unzipped—then open a terminal window and navigate to the folder. <strong>Skip to step 3</strong>.</p>
+<ol>
+<li><p>Run the <code>./install-scripts/download.sh</code>. script to download additional Kgrid components.</p>
+</li>
+<li><p>Start the knowledge grid: <code>./kg-start.sh</code> (The first time, this takes a while.) When it&#39;s running, a browser window opens with links to the Kgrid components. Confirm that the Cancer Advisor client is working.</p>
+</li>
+<li><p>Initialize the Library: <code>./install-scripts/init.sh</code>. Once initialized, there should be 6 knowledge objects in the Library matching the Cancer Advisor objects.</p>
+</li>
+<li><p>To stop the Kgrid: <code>./kg-stop.sh</code></p>
+</li>
+</ol>
 <h4 id="windows-and-linux-users-these-instructions-are-tailored-for-installing-on-a-mac-windows-users-can-use-the-bat-files-in-the-kgrid-starter-folder-and-your-operating-system-commands-for-navigating-installing-and-running-some-applications-may-be-different-see-appendix-a-for-more-info-">Windows and Linux users: These instructions are tailored for installing on a Mac. Windows users can use the <code>.bat</code> files in the kgrid-starter folder, and your operating system commands for navigating, installing, and running some applications may be different. See Appendix A for more info.</h4>
 <h3 id="section-1-prepare-your-system">Section 1. Prepare your system</h3>
 <p>To set up and run Knowledge Grid from your local machine, the system should have the following required software:</p>
@@ -225,7 +240,7 @@ npm list -g http-server version  # http-server version
 <h4 id="initialize-the-fedora-repo-and-the-library-first-time-">Initialize the Fedora repo and the library (first time)</h4>
 <pre><code>cd /[path to kgrid_starter]/kgrid-starter-0.5
 ./kg-start.sh   # Use kg-start.bat for Windows
-                # This will take a while, also starts the Library  
+                # This will take a while, also starts the Library
 ./install-scripts/init.sh # This loads objects in the library
 </code></pre><p><strong>The Library, Activator, and Cancer Advisor client should be running!</strong></p>
 <p>Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to:</p>
@@ -258,7 +273,7 @@ install-scripts\download.bat
 </code></pre></li>
 <li><p>For initialize the Fedora repo and the library (first time), run</p>
 <pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.6
-kg-start.bat                   # This will take a while, also starts the Library  
+kg-start.bat                   # This will take a while, also starts the Library
 install-scripts\init.bat       # This loads objects in the library
 </code></pre></li>
 <li>For starting the knowledge Grid, run<pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.5

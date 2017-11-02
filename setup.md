@@ -1,11 +1,13 @@
 ## Knowledge Grid Starter Installation and Set Up Guide
 
 ### Quick Start
-> To install and set up the starter kit, you'll need administrator privileges on your machine, and intermediate skills with installing software and using the command line. For instructions on setting up your machine, see ___Section 1. Prepare your system___
 
-1. Download the kgrid-starter source zip from [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest) and unzip it (for example on your Desktop). Open a terminal window, and navigate to the `../kgrid-starter-x.y` folder. 
+To install and set up the starter kit, you'll need administrator privileges on your machine, and intermediate skills with installing software and using the command line. For instructions on setting up your machine, see ___Section 1. Prepare your system___
 
-> If using the kgrid-starter USB stick just copy `/kgrid-starter-x.y` to your Desktop—it's already unzipped—then open a terminal window and navigate to the folder. __Skip to step 3__.
+
+1. Download the kgrid-starter source zip from [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest) and unzip it (for example on your Desktop). Open a terminal window, and navigate to the `../kgrid-starter-x.y` folder.
+
+If using the kgrid-starter USB stick just copy `/kgrid-starter-x.y` to your Desktop—it's already unzipped—then open a terminal window and navigate to the folder. __Skip to step 3__.
 
 2. Run the `./install-scripts/download.sh`. script to download additional Kgrid components.
 
