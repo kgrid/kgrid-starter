@@ -1,14 +1,19 @@
 ## Knowledge Grid Starter Installation and Set Up Guide
 
+### Quick Start
+> To install and set up the starter kit, you'll need administrator privileges on your machine, and intermediate skills with installing software and using the command line. For instructions on setting up your machine, see ___Section 1. Prepare your system___
 
-If you haven't done so, download the kgrid-starter ("Source code (zip)") from the [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest) and unzip (to the Desktop for example). A folder with a name like `kgrid-starter-x.y` will be created.
+1. Download the kgrid-starter source zip from [Kgrid Starter release page (latest version)](https://github.com/kgrid/kgrid-starter/releases/latest) and unzip it (for example on your Desktop). Open a terminal window, and navigate to the `../kgrid-starter-x.y` folder. 
 
-Or, if you have a starter kit drive, copy the `kgrid-starter-x.y` folder to your desktop.  
+> If using the kgrid-starter USB stick just copy `/kgrid-starter-x.y` to your Desktop—it's already unzipped—then open a terminal window and navigate to the folder. __Skip to step 3__.
 
-Change to the `kgrid-starter-x.y` folder and double click `setup.html` (this file) to view a local copy of this getting started guide, or run `open setup.html` to launch a browser window with these instructions.
+2. Run the `./install-scripts/download.sh`. script to download additional Kgrid components.
 
-To install and set up the starter kit, you'll need administrator privileges on the machine. it is preferred to have intermediate skills with installing software and using the command line.
+3. Start the knowledge grid: `./kg-start.sh` (The first time, this takes a while.) When it's running, a browser window opens with links to the Kgrid components. Confirm that the Cancer Advisor client is working.
 
+4. Initialize the Library: `./install-scripts/init.sh`. Once initialized, there should be 6 knowledge objects in the Library matching the Cancer Advisor objects.
+
+5. To stop the Kgrid: `./kg-stop.sh`
 
 
 #### Windows and Linux users: These instructions are tailored for installing on a Mac. Windows users can use the `.bat` files in the kgrid-starter folder, and your operating system commands for navigating, installing, and running some applications may be different. See Appendix A for more info.
