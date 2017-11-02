@@ -18,23 +18,23 @@ fi
 
 cd fcrepo4-vagrant-4.5.1
 	echo "
-	Starting Fedora Commons repo (via fcrepo4-vagrant) on http://localhost:8080/fcrepo
+	Starting Fedora Commons repo (via fcrepo4-vagrant) on http://localhost:48080/fcrepo
 	If this is the first time running the Knowledge Grid, it will take a while
 	to set up the virtual machine, the Fedora repository, and the associated tools...
 	"
 	vagrant up
 cd ..
 
-echo "Starting library on http://localhost:8081"
-java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=8081 --ezid.mock=true &
+echo "Starting library on http://localhost:48081"
+java -jar library/kgrid-library-0.2.4-SNAPSHOT.war --server.port=48081 --ezid.mock=true --fcrepo.port=48080 &
 # echo $! > ".pids.txt"
 
-echo "Starting activator on http://localhost:8082"
-java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.home=activator --library.url=http://localhost:8081 &
+echo "Starting activator on http://localhost:48082"
+java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=48082 --activator.home=activator --library.url=http://localhost:48081 &
 # echo $! >> ".pids.txt"
 
 # cancer advisor, needs node, npm then npm install http-server -g
-echo "Starting demo server on http://localhost:8083"
-http-server -p 8083 -o &
+echo "Starting demo server on http://localhost:48083"
+http-server -p 48083 -o -a localhost &
 echo "Demo server started"
 # echo $! >> "../.pids.txt"
