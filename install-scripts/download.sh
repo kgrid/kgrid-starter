@@ -10,7 +10,7 @@ The following tools are required for running the Knowledge grid:
 JDK 8
 VirtualBox
 Vagrant
-Node.js (with NPM and the 'http-server' package)
+Node.js (with NPM and the 'live-server' package)
 
 See the readme.html in this directory for details.
 "

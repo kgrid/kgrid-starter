@@ -141,11 +141,8 @@ function interpretProstateCancerScore() {
 	$
 			.ajax({
 				type : 'POST',
-				// url : 'http://localhost:8080/ObjectTeller/rest/getResult', // if using a remote instance (cross origin)
 				url : interpreterURL,
 				data : prostateInterpreterIp,
-				// dataType : "json",
-                // crossDomain: true, // didn't seem to be needed (forces cross domain even if same origin?)
 				headers: { // dataType: "json" didn't work
 					'Content-Type': 'application/json',
 					'Accept': 'application/json'

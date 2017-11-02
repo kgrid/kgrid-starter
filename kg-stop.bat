@@ -1,5 +1,5 @@
 @echo off
-echo "Stopping http-server"
+echo "Stopping live-server"
 FOR /F "tokens=5 delims= " %%P IN ('netstat -a -n -o ^| findstr :48083') DO IF %%P NEQ 0 ( taskkill /PID %%P /F)
 taskkill /fi "windowtitle eq kgrid"
 echo "Stopping KGRID Activator"

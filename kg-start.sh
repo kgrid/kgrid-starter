@@ -33,8 +33,8 @@ echo "Starting activator on http://localhost:48082"
 java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=48082 --activator.home=activator --library.url=http://localhost:48081 &
 # echo $! >> ".pids.txt"
 
-# cancer advisor, needs node, npm then npm install http-server -g
+# cancer advisor, needs node, npm then npm install live-server -g
 echo "Starting demo server on http://localhost:48083"
-http-server -p 48083 -o -a localhost &
+live-server --port=48083 --host=localhost --browser="google chrome" &
 echo "Demo server started"
 # echo $! >> "../.pids.txt"

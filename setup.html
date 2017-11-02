@@ -83,7 +83,7 @@ margin-top: 0;
 }
 p.inst{
   padding:5px;
-  font-weight:800;
+  font-weight:bold;
 }
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
@@ -209,14 +209,14 @@ width: 960px;
 <li><a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_1">Oracle VirtualBox 5.1</a> - Note: get VirtualBox version 5.1 which is compatible with Vagrant.</li>
 <li><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></li>
 <li><a href="https://www.npmjs.com/get-npm">Node.js + npm</a> - Note: get the long-term release version.</li>
-<li>After installing Node.js and <code>npm</code>, install the demo server (to run client apps). From the command line:<br><code>npm install -g http-server</code></li>
+<li>After installing Node.js and <code>npm</code>, install the demo server (to run client apps). From the command line:<br><code>npm install -g live-server</code></li>
 </ul>
 <p>Note: If you are using a Windows system, you will need to download and install cURL at <a href="http://www.confusedbycode.com/curl">cURL Download Page</a></p>
 <p>To verify the verisons for installed sotware, you can run from the command line:</p>
 <pre><code>java -version                    # JAVA version
 vboxmanage -version              # Virtual Box version
 vagrant --version                # Vagrant version
-npm list -g http-server version  # http-server version
+npm list -g live-server version  # live-server version
 </code></pre><h3 id="section-2-download-kgrid-components">Section 2. Download KGRID Components</h3>
 <p>If you are using the pre-configured starter kit drive, skip this section and go to Section 3. If you downloaded the starter kit source from Github, you will need to download  additional KGRID Components:</p>
 <h4 id="components-already-installed-with-the-kgrid-starter">Components already installed with the kgrid-starter</h4>
@@ -240,14 +240,14 @@ npm list -g http-server version  # http-server version
 <h4 id="initialize-the-fedora-repo-and-the-library-first-time-">Initialize the Fedora repo and the library (first time)</h4>
 <pre><code>cd /[path to kgrid_starter]/kgrid-starter-0.5
 ./kg-start.sh   # Use kg-start.bat for Windows
-                # This will take a while, also starts the Library
+                # This will take a while, also starts the Library  
 ./install-scripts/init.sh # This loads objects in the library
 </code></pre><p><strong>The Library, Activator, and Cancer Advisor client should be running!</strong></p>
 <p>Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to:</p>
 <ul>
-<li>localhost:8081/health to see the status of the library</li>
-<li>localhost:8080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running</li>
-<li>localhost:8082/shelf to see objects loaded in the Activator</li>
+<li>localhost:48081/health to see the status of the library</li>
+<li>localhost:48080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running</li>
+<li>localhost:48082/shelf to see objects loaded in the Activator</li>
 </ul>
 <h4 id="starting-and-stopping-the-knowledge-grid">Starting and stopping the Knowledge Grid</h4>
 <p>From the command line, run the start script in the root of Knowledge Grid Starter Kit (e.g. <code>kgrid-starter-0.5</code>):</p>
@@ -255,10 +255,10 @@ npm list -g http-server version  # http-server version
   ./kg-start.sh   # Use kg-start.bat in Windows
 </code></pre><p>  This will start:</p>
 <ul>
-<li>the Fedora vagrant virtual machine on <code>localhost:8080</code>;</li>
-<li>Knowledge Grid Library service at <code>localhost:8081</code>;</li>
-<li>Knowledge Grid Activator at <code>localhost:8082</code>;</li>
-<li>A HTTP server (via <code>http-server</code>) on <code>localhost:8083</code>, hosting the Cancer Advisor at <code>/cancer-advisor-0.5</code></li>
+<li>the Fedora vagrant virtual machine on <code>localhost:48080</code>;</li>
+<li>Knowledge Grid Library service at <code>localhost:48081</code>;</li>
+<li>Knowledge Grid Activator at <code>localhost:48082</code>;</li>
+<li>A HTTP server (via <code>live-server</code>) on <code>localhost:48083</code>, hosting the Cancer Advisor at <code>/cancer-advisor-0.5</code></li>
 </ul>
 <p>And it will launch a welcome page in the browser, which contains the links to Knowledge Grid Library Web App, the Cancer Advisor and other useful resources.</p>
 <hr>
@@ -273,7 +273,7 @@ install-scripts\download.bat
 </code></pre></li>
 <li><p>For initialize the Fedora repo and the library (first time), run</p>
 <pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.6
-kg-start.bat                   # This will take a while, also starts the Library
+kg-start.bat                   # This will take a while, also starts the Library  
 install-scripts\init.bat       # This loads objects in the library
 </code></pre></li>
 <li>For starting the knowledge Grid, run<pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.5
@@ -285,18 +285,18 @@ kg-stop.bat
 </ul>
 <p>In Windows:</p>
 <pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.6
-netstat -ano |findstr 8083     # This will reutrn the process ID (PID) for the http-server
+netstat -ano |findstr 48083     # This will reutrn the process ID (PID) for the live-server
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
-netstat -ano |findstr 8082     # This will reutrn the process ID (PID) for the activator
+netstat -ano |findstr 48082     # This will reutrn the process ID (PID) for the activator
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
-netstat -ano |findstr 8081     # This will reutrn the process ID (PID) for the library
+netstat -ano |findstr 48081     # This will reutrn the process ID (PID) for the library
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
 </code></pre><p>In Linux:</p>
-<pre><code>pkill -afl &quot;8081&quot;
-pkill -afl &quot;8082&quot;
-pkill -afl http-server
+<pre><code>pkill -afl &quot;48081&quot;
+pkill -afl &quot;48082&quot;
+pkill -afl live-server
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
 cd ..

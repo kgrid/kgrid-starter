@@ -18,4 +18,4 @@ start /min  java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=48082
 
 echo "Starting cancer advisor"
 ::cd cancer-advisor
-start /min "Kgrid" http-server -p 48083 -a localhost -o
+start /min "Kgrid" live-server --port=48083 --host=localhost --browser="chrome"

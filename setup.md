@@ -29,7 +29,7 @@ To set up and run Knowledge Grid from your local machine, the system should have
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [Node.js + npm](https://www.npmjs.com/get-npm) - Note: get the long-term release version.
 - After installing Node.js and `npm`, install the demo server (to run client apps). From the command line:  
-  `npm install -g http-server`
+  `npm install -g live-server`
 
 Note: If you are using a Windows system, you will need to download and install cURL at [cURL Download Page](http://www.confusedbycode.com/curl)
 
@@ -39,7 +39,7 @@ To verify the verisons for installed sotware, you can run from the command line:
 java -version                    # JAVA version
 vboxmanage -version              # Virtual Box version
 vagrant --version                # Vagrant version
-npm list -g http-server version  # http-server version
+npm list -g live-server version  # live-server version
 ```
 
 ### Section 2. Download KGRID Components
@@ -85,9 +85,9 @@ __The Library, Activator, and Cancer Advisor client should be running!__
 
 Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to:
 
-- localhost:8081/health to see the status of the library
-- localhost:8080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running
-- localhost:8082/shelf to see objects loaded in the Activator
+- localhost:48081/health to see the status of the library
+- localhost:48080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running
+- localhost:48082/shelf to see objects loaded in the Activator
 
 
 #### Starting and stopping the Knowledge Grid
@@ -101,10 +101,10 @@ From the command line, run the start script in the root of Knowledge Grid Starte
 
   This will start:
 
-  - the Fedora vagrant virtual machine on `localhost:8080`;
-  - Knowledge Grid Library service at `localhost:8081`;
-  - Knowledge Grid Activator at `localhost:8082`;
-  - A HTTP server (via `http-server`) on `localhost:8083`, hosting the Cancer Advisor at `/cancer-advisor-0.5`
+  - the Fedora vagrant virtual machine on `localhost:48080`;
+  - Knowledge Grid Library service at `localhost:48081`;
+  - Knowledge Grid Activator at `localhost:48082`;
+  - A HTTP server (via `live-server`) on `localhost:48083`, hosting the Cancer Advisor at `/cancer-advisor-0.5`
 
 And it will launch a welcome page in the browser, which contains the links to Knowledge Grid Library Web App, the Cancer Advisor and other useful resources.
 
@@ -144,11 +144,11 @@ The Knowledge Grid components can also be shut down manually by running the coma
 In Windows:
 ```
 cd \[path to kgrid_starter]\kgrid-starter-0.6
-netstat -ano |findstr 8083     # This will reutrn the process ID (PID) for the http-server
+netstat -ano |findstr 48083     # This will reutrn the process ID (PID) for the live-server
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
-netstat -ano |findstr 8082     # This will reutrn the process ID (PID) for the activator
+netstat -ano |findstr 48082     # This will reutrn the process ID (PID) for the activator
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
-netstat -ano |findstr 8081     # This will reutrn the process ID (PID) for the library
+netstat -ano |findstr 48081     # This will reutrn the process ID (PID) for the library
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
@@ -156,9 +156,9 @@ vagrant halt
 
 In Linux:
 ```
-pkill -afl "8081"
-pkill -afl "8082"
-pkill -afl http-server
+pkill -afl "48081"
+pkill -afl "48082"
+pkill -afl live-server
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
 cd ..
