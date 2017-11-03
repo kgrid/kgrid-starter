@@ -14,6 +14,7 @@ Note: If you are using a Knowledge Starter Kit Drive, the kit has been unzipped.
 
 4. Follow the step-by-step instructions to install, set up and run the knowledge grid from your local machine.
 
+5. Once the Knowledge Grid Starter is set up and initialized, script `kg-start` will launch Knowledge Grid. Details can be found in `quickstart.html`
 
 ### Enjoy!
 

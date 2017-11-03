@@ -1,4 +1,5 @@
-REM initialize the library with the objects from the shelf
+@echo off
+echo "Initializing KGrid Library with the knowledge objects from the shelf"
 
 curl --request POST "http://localhost:48081/login" -Fusername=admin@kgrid.org -Fpassword=admin123 --cookie-jar store
 curl --request PUT "http://localhost:48081/knowledgeObject/99999-fk4jh3tk9s" -d "@./activator/shelf/99999-fk4jh3tk9s" -H "Content-Type: application/json" --cookie store

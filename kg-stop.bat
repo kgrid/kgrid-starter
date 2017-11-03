@@ -1,6 +1,10 @@
 @echo off
-echo "Stopping live-server"
-FOR /F "tokens=5 delims= " %%P IN ('netstat -a -n -o ^| findstr :48083') DO IF %%P NEQ 0 ( taskkill /PID %%P /F)
+echo "Stopping live-server module"
+FOR /F "tokens=5 delims= " %%P IN ('netstat -a -n -o ^| findstr :48083') DO (
+    for /f "tokens=2 delims=," %%a in ('tasklist /fi "pid eq %%P" /fi "pid gt 0" /fi "imagename eq node.exe" /nh /fo:csv') do (
+      taskkill /PID %%P /F
+    )
+  )
 taskkill /fi "windowtitle eq kgrid"
 echo "Stopping KGRID Activator"
 FOR /F "tokens=5 delims= " %%P IN ('netstat -a -n -o ^| findstr :48082') DO IF %%P NEQ 0 ( taskkill /PID %%P /F)

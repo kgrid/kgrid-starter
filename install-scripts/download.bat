@@ -1,4 +1,5 @@
-REM Download Kgrid components themselves
+@echo off
+echo "Downloading Additional KGrid components"
 
 :: The Fedora Commons repo (via fcrepo4-vagrant) is preinstalled in the kgrid-starter.
 :: It needs to be initialized with 'vagrant up' which called from the init script
