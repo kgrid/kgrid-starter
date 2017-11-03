@@ -6,6 +6,7 @@ function cleanup {
 	echo "Shutting down the Knowledge Grid..."
 	./kg-stop
 	echo "Thanks, bye"
+	exit
 }
 trap cleanup EXIT
 
@@ -49,6 +50,6 @@ java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=48082 --activator
 # cancer advisor, needs node, npm then npm install live-server -g
 # To force a particular browser add '--browser="google chrome"'
 echo "Starting demo server on http://localhost:48083"
-live-server --port=48083 --host=localhost &
+live-server --port=48083 --host=localhost
 echo "Demo server started"
 # echo $! >> "../.pids.txt"
