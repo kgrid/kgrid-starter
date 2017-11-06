@@ -240,14 +240,14 @@ npm list -g live-server version  # live-server version
 <h4 id="initialize-the-fedora-repo-and-the-library-first-time-">Initialize the Fedora repo and the library (first time)</h4>
 <pre><code>cd /[path to kgrid_starter]/kgrid-starter-0.6
 ./kg-start   # Use kg-start.bat for Windows
-                # This will take a while, also starts the Library  
+                # This will take a while, also starts the Library
 ./install-scripts/init # This loads objects in the library
 </code></pre><p><strong>The Library, Activator, and Cancer Advisor client should be running!</strong></p>
 <p>Browser windows should be launched for the Library and the Cancer Advisor. You can also navigate to:</p>
 <ul>
-<li>localhost:48081/health to see the status of the library</li>
-<li>localhost:48080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running</li>
-<li>localhost:48082/shelf to see objects loaded in the Activator</li>
+<li>localhost:8081/health to see the status of the library</li>
+<li>localhost:8080/fcrepo/rest (fedoraAdmin:secret3) to see the fedora repo running</li>
+<li>localhost:8082/shelf to see objects loaded in the Activator</li>
 </ul>
 <h4 id="starting-and-stopping-the-knowledge-grid">Starting and stopping the Knowledge Grid</h4>
 <p>From the command line, run the start script in the root of Knowledge Grid Starter Kit (e.g. <code>kgrid-starter-0.6</code>):</p>
@@ -255,10 +255,10 @@ npm list -g live-server version  # live-server version
   ./kg-start   # Use kg-start.bat in Windows
 </code></pre><p>  This will start:</p>
 <ul>
-<li>the Fedora vagrant virtual machine on <code>localhost:48080</code>;</li>
-<li>Knowledge Grid Library service at <code>localhost:48081</code>;</li>
-<li>Knowledge Grid Activator at <code>localhost:48082</code>;</li>
-<li>A HTTP server (via <code>live-server</code>) on <code>localhost:48083</code>, hosting the Cancer Advisor at <code>/cancer-advisor-0.5</code></li>
+<li>the Fedora vagrant virtual machine on <code>localhost:8080</code>;</li>
+<li>Knowledge Grid Library service at <code>localhost:8081</code>;</li>
+<li>Knowledge Grid Activator at <code>localhost:8082</code>;</li>
+<li>A HTTP server (via <code>live-server</code>) on <code>localhost:8083</code>, hosting the Cancer Advisor at <code>/cancer-advisor-0.5</code></li>
 </ul>
 <p>And it will launch a welcome page in the browser, which contains the links to Knowledge Grid Library Web App, the Cancer Advisor and other useful resources.</p>
 <hr>
@@ -273,7 +273,7 @@ install-scripts\download.bat
 </code></pre></li>
 <li><p>For initialize the Fedora repo and the library (first time), run</p>
 <pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.6
-kg-start.bat                   # This will take a while, also starts the Library  
+kg-start.bat                   # This will take a while, also starts the Library
 install-scripts\init.bat       # This loads objects in the library
 </code></pre></li>
 <li>For starting the knowledge Grid, run<pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.6
@@ -285,17 +285,17 @@ kg-stop.bat
 </ul>
 <p>In Windows:</p>
 <pre><code>cd \[path to kgrid_starter]\kgrid-starter-0.6
-netstat -ano |findstr 48083     # This will reutrn the process ID (PID) for the live-server
+netstat -ano |findstr 8083     # This will reutrn the process ID (PID) for the live-server
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
-netstat -ano |findstr 48082     # This will reutrn the process ID (PID) for the activator
+netstat -ano |findstr 8082     # This will reutrn the process ID (PID) for the activator
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
-netstat -ano |findstr 48081     # This will reutrn the process ID (PID) for the library
+netstat -ano |findstr 8081     # This will reutrn the process ID (PID) for the library
 taskkill /pid [PID] /F         # Replace [PID] with the ID found from previous command
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
 </code></pre><p>In Linux:</p>
-<pre><code>pkill -afl &quot;48081&quot;
-pkill -afl &quot;48082&quot;
+<pre><code>pkill -afl &quot;8081&quot;
+pkill -afl &quot;8082&quot;
 pkill -afl live-server
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
