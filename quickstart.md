@@ -1,4 +1,4 @@
-## Knowledge Grid Quick Start Guide
+### Knowledge Grid Quick Start Guide
 
 **To start the Knowledge Grid** (once the Knowledge Grid Starter has been set up and initialized):
 1.	**Navigate to the KGrid Starter folder** (On a Mac, in Finder [user home]/Desktop/kgrid-starter-x.y).
