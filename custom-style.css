@@ -166,6 +166,7 @@ background: #FFF;
 padding: 30px 50px;
 margin: 0 auto;
 width: 82%;
+max-width:930px;
 }
 
 p.inst{
