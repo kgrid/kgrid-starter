@@ -1,18 +1,7 @@
 #!/bin/sh
 
-set -e
-function cleanup {
-	echo "Demo server stopped"
-	echo "Shutting down the Knowledge Grid..."
-	./kg-stop
-	echo "Thanks, bye"
-	exit
-}
-trap cleanup EXIT
-
 BASEDIR=$(dirname "$0")
 cd $BASEDIR
-
 
 echo "
 Launching the knowledge grid... See the readme file in this directory for details on installation.
@@ -47,9 +36,10 @@ echo "Starting activator on http://localhost:8082"
 java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.home=activator --library.url=http://localhost:8081 &
 # echo $! >> ".pids.txt"
 
-# cancer advisor, needs node, npm then npm install live-server -g
+# cancer advisor, needs node, npm installed, then 'npm install live-server -g'
 # To force a particular browser add '--browser="google chrome"'
-echo "Starting demo server on http://localhost:8083"
-live-server --port=8083 --host=localhost
-echo "Demo server started"
-# echo $! >> "../.pids.txt"
+echo "Starting demo server on http://localhost:8083. Use './kg-stop' to stop the Knowledge Grid"
+live-server --port=8083 --host=localhost &
+
+# wait for live-server to be up before exiting
+sleep 15
