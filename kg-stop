@@ -1,12 +1,8 @@
 #!/bin/sh
 
-
-BASEDIR=$(dirname "$0")
-cd $BASEDIR
-
-pkill -afl "8081"
-pkill -afl "8082"
 pkill -afl live-server
+pkill -afl "8082"
+pkill -afl "8081"
 cd fcrepo4-vagrant-4.5.1
 vagrant halt
 cd ..

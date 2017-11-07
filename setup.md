@@ -204,7 +204,29 @@ A typical file structure for the Knowledge Grid Starter Kit will look like this:
 ├── kg-stop.bat
 └── kg-stop
 ```
+### Troubleshooting
 
+The Knowledge Grid Starter runs on ports 8080-8083. If something is running on those ports the components won't start. To find out what's running and kill it, you can try netstat:
+
+```bash
+netstat -vanp tcp | grep 8080
+tcp4       0      0  *.8080                 *.*                    LISTEN       65536  65536  22904      0
+
+```
+
+Or, for OSX El Capitan and newer (or if your netstat doesn't support -p), use lsof:
+
+```bash
+sudo lsof -i tcp:8080
+COMMAND     PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+VBoxHeadl 22904 pboisver   16u  IPv4 0x3ce0b9cc3fe3f9cd      0t0  TCP *:http-alt (LISTEN)
+``` 
+
+use the process id (`pid`) to kill the process:
+
+```bash
+kill 22904
+```
 
 #### Questions?
 Send an email to Knowledge Grid Development Team at dlhs.knowledge.grid@umich.edu.

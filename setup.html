@@ -336,7 +336,20 @@ cd ..
 ├── kg-start
 ├── kg-stop.bat
 └── kg-stop
-</code></pre><h4 id="questions-">Questions?</h4>
+</code></pre><h3 id="troubleshooting">Troubleshooting</h3>
+<p>The Knowledge Grid Starter runs on ports 8080-8083. If something is running on those ports the components won&#39;t start. To find out what&#39;s running and kill it, you can try netstat:</p>
+<pre><code class="lang-bash">netstat -vanp tcp | grep 8080
+tcp4       0      0  *.8080                 *.*                    LISTEN       65536  65536  22904      0
+</code></pre>
+<p>Or, for OSX El Capitan and newer (or if your netstat doesn&#39;t support -p), use lsof:</p>
+<pre><code class="lang-bash">sudo lsof -i tcp:8080
+COMMAND     PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+VBoxHeadl 22904 pboisver   16u  IPv4 0x3ce0b9cc3fe3f9cd      0t0  TCP *:http-alt (LISTEN)
+</code></pre>
+<p>use the process id (<code>pid</code>) to kill the process:</p>
+<pre><code class="lang-bash">kill 22904
+</code></pre>
+<h4 id="questions-">Questions?</h4>
 <p>Send an email to Knowledge Grid Development Team at dlhs.knowledge.grid@umich.edu.</p>
 
 		</div>
