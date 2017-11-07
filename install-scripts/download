@@ -32,6 +32,9 @@ curl -L https://github.com/kgrid/kgrid-starter/releases/download/0.6/{activator-
 echo "Downloading the Python adapter (python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar)"
 curl -L https://github.com/kgrid/kgrid-starter/releases/download/0.6/{python-adapter-0.5.8-SNAPSHOT-jar-with-dependencies.jar} --output ./activator/adapters/#1
 
+echo "Downloading the Demo Video (KGridDemoVideo.3min.720p.mov)"
+curl -L https://github.com/kgrid/kgrid-starter/releases/download/0.6/{KGridDemoVideo.3min.720p.mov} --output ./video/#1
+
 echo "
 Finished downloading.... If there were errors see the setup guide,
 check that you are connected to the internet, and try again.
