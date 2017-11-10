@@ -38,8 +38,13 @@ java -jar activator/activator-0.5.8-SNAPSHOT.war --server.port=8082 --activator.
 
 # cancer advisor, needs node, npm installed, then 'npm install live-server -g'
 # To force a particular browser add '--browser="google chrome"'
-echo "Starting demo server on http://localhost:8083. Use './kg-stop' to stop the Knowledge Grid"
-live-server --port=8083 --host=localhost &
+echo "
 
-# wait for live-server to be up before exiting
-sleep 15
+Starting demo server on http://localhost:8083.
+
+   Use Ctrl-C to stop the demo server, and then './kg-stop' to stop the Knowledge Grid.
+
+   You can also run 'kg-stop' from another window
+
+"
+live-server --port=8083 --host=localhost

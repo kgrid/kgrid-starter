@@ -16,4 +16,4 @@ A terminal window will open while the Knowledge Grid is starting. Once started, 
 
 The Knowledge Grid will start. Once started, a browser window will open with links to the Library and Cancer Advisor. It may take a minute before they are ready for use. (If the Welcome page doesn't open automatically, type `open index.html`.)
 
-**When you are finished, enter `./kg-stop`** to stop the Knowledge Grid..
+**When you are finished, enter Ctrl-C to stop the demo server and `./kg-stop`** to stop the Knowledge Grid. You can also run 'kg-stop' from another window. 
